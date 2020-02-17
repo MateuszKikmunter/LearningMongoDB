@@ -3,7 +3,7 @@ const url = "mongodb://localhost:27017/learning_mongo";
 
 const findDocuments = (db, callback) => {
     const collection = db.collection("tours");
-    collection.find().toArray((err, docs) => {
+    collection.find({ "tourPackage": "Snowboard Cali" }).toArray((err, docs) => {
         console.log(docs);
         callback;
     });
